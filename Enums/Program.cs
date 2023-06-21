@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 
 namespace Enums
 {
@@ -14,53 +15,61 @@ namespace Enums
         }
         static void DrawAce(Suits suit)
         {
-            if (suit == Suits.Heart) 
-            {
-                Console.WriteLine($"╭───────╮");
-                Console.WriteLine($"│A      │");
-                Console.WriteLine($"│♥      │");
-                Console.WriteLine($"│   ♥   │");
-                Console.WriteLine($"│      ♥│");
-                Console.WriteLine($"│      A│");
-                Console.WriteLine($"╰───────╯");
-                return; 
-            }
-            if (suit == Suits.Diamond)
-            {
-                Console.WriteLine($"╭───────╮");
-                Console.WriteLine($"│A      │");
-                Console.WriteLine($"│♦      │");
-                Console.WriteLine($"│   ♦   │");
-                Console.WriteLine($"│      ♦│");
-                Console.WriteLine($"│      A│");
-                Console.WriteLine($"╰───────╯");
-                return;
-            }
-            if (suit == Suits.Club)
-            {
-                Console.WriteLine($"╭───────╮");
-                Console.WriteLine($"│A      │");
-                Console.WriteLine($"│♣      │");
-                Console.WriteLine($"│   ♣   │");
-                Console.WriteLine($"│      ♣│");
-                Console.WriteLine($"│      A│");
-                Console.WriteLine($"╰───────╯");
-                return;
-            }
-            if (suit == Suits.Club)
-                Console.WriteLine($"╭───────╮");
-                Console.WriteLine($"│A      │");
-                Console.WriteLine($"│♠      │");
-                Console.WriteLine($"│   ♠   │");
-                Console.WriteLine($"│      ♠│");
-                Console.WriteLine($"│      A│");
-                Console.WriteLine($"╰───────╯");
-
             Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            switch (suit)
+            {
+                case Suits.Heart:
+                    {
+                        Console.WriteLine($"╭───────╮");
+                        Console.WriteLine($"│A      │");
+                        Console.WriteLine($"│♥      │");
+                        Console.WriteLine($"│   ♥   │");
+                        Console.WriteLine($"│      ♥│");
+                        Console.WriteLine($"│      A│");
+                        Console.WriteLine($"╰───────╯");
+                        return;
+                    }
+                case Suits.Diamond:
+                    {
+                        Console.WriteLine($"╭───────╮");
+                        Console.WriteLine($"│A      │");
+                        Console.WriteLine($"│♦      │");
+                        Console.WriteLine($"│   ♦   │");
+                        Console.WriteLine($"│      ♦│");
+                        Console.WriteLine($"│      A│");
+                        Console.WriteLine($"╰───────╯");
+                        return;
+                    }
+                case Suits.Spade:
+                    {
+                        Console.WriteLine($"╭───────╮");
+                        Console.WriteLine($"│A      │");
+                        Console.WriteLine($"│♠      │");
+                        Console.WriteLine($"│   ♠   │");
+                        Console.WriteLine($"│      ♠│");
+                        Console.WriteLine($"│      A│");
+                        Console.WriteLine($"╰───────╯");
+                        return;
+                    }
+                case Suits.Club:
+                    {
+                        Console.WriteLine($"╭───────╮");
+                        Console.WriteLine($"│A      │");
+                        Console.WriteLine($"│♣      │");
+                        Console.WriteLine($"│   ♣   │");
+                        Console.WriteLine($"│      ♣│");
+                        Console.WriteLine($"│      A│");
+                        Console.WriteLine($"╰───────╯");
+                        return;
+                    }
+
+            }
+
         }
         static void Main(string[] args)
         {
-            DrawAce(Suits.Heart);
+            DrawAce(Suits.Diamond);
         }
     }
 }
